@@ -5,6 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wynajem pokoi</title>
     <link rel="stylesheet" href="styl2.css">
+    <script>
+        czy_szary_1 = true;
+        czy_szary_2 = true;
+        czy_szary_3 = true;
+
+        function zmienZdjecie1() {
+            zdjecie = document.getElementById('zdjecie1');
+
+            if(czy_szary_1 == true) {
+                zdjecie.src = "1.jpg";
+                czy_szary_1 = false;
+            } else {
+                zdjecie.src = "1szary.jpg";
+                czy_szary_1 = true;
+            }
+        }
+        function zmienZdjecie2() {
+            zdjecie = document.getElementById('zdjecie2');
+
+            if(czy_szary_2 == true) {
+                zdjecie.src = "2.jpg";
+                czy_szary_2 = false;
+            } else {
+                zdjecie.src = "2szary.jpg";
+                czy_szary_2 = true;
+            }
+        }
+        function zmienZdjecie3() {
+            zdjecie = document.getElementById('zdjecie3');
+
+            if(czy_szary_3 == true) {
+                zdjecie.src = "3.jpg";
+                czy_szary_3 = false;
+            } else {
+                zdjecie.src = "3szary.jpg";
+                czy_szary_3 = true;
+            }
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -13,15 +52,15 @@
     <section>
         <aside class="lewy">
             <a href="index.html">GŁÓWNA</a>
-            <img src="1szary.jpg" alt="pokoje">
+            <img src="1szary.jpg" alt="pokoje" onclick="zmienZdjecie1()" id="zdjecie1">
         </aside>
         <main>
             <a href="cennik.php">CENNIK</a>
-            <img src="2szary.jpg" alt="pokoje">
+            <img src="2szary.jpg" alt="pokoje" onclick="zmienZdjecie2()" id="zdjecie2">
         </main>
         <aside class="prawy">
             <a href="kalkulator.html">KALKULATOR</a>
-            <img src="3szary.jpg" alt="pokoje">
+            <img src="3szary.jpg" alt="pokoje" onclick="zmienZdjecie3()" id="zdjecie3">
         </aside>
     </section>
     <footer>

@@ -18,21 +18,27 @@
         <main>
             <a href="cennik.php">CENNIK</a>
             <table>
-                <tr>
-                    <td>1</td>
-                    <td>ileś-osobowy</td>
-                    <td>50</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>ileś-osobowy</td>
-                    <td>50</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>ileś-osobowy</td>
-                    <td>50</td>
-                </tr>
+<?php
+// połączenie
+$db = mysqli_connect("localhost", "root", "", "wynajem");
+
+// wysłanie zapytania
+$q = "SELECT * FROM pokoje;";
+$r = mysqli_query($db, $q);
+
+// wyświetlenie
+while($row = mysqli_fetch_array($r)) {
+    // $row = wiersz z wyniku zapytania
+    echo "<tr>
+    <td>$row[id]</td>
+    <td>$row[nazwa]</td>
+    <td>$row[cena]</td>
+</tr>";
+}
+
+// rozłączenie z bazą
+mysqli_close($db);
+?>
             </table>
         </main>
         <aside class="prawy">
