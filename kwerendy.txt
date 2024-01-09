@@ -1,0 +1,15 @@
+Kwerenda 1
+SELECT * FROM pokoje; 
+
+Kwerenda 2 
+SELECT rezerwacje.id_pok, rezerwacje.sezon 
+FROM rezerwacje 
+WHERE rezerwacje.liczba_dn > 7; 
+
+Kwerenda 3
+SELECT SUM(rezerwacje.liczba_dn)
+FROM rezerwacje
+WHERE rezerwacje.sezon = "zima";
+
+Kwerenda 4
+CREATE USER 'najemca'@'%' IDENTIFIED BY 'n@JEM1@!';
